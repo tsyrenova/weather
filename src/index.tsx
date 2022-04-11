@@ -2,17 +2,13 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './style/index.scss';
 import { BrowserRouter } from 'react-router-dom';
-
-// ReactDOM.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-//   document.getElementById('root')
-// );
+import { ThemeProvider } from './provider/ThemeProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </BrowserRouter>
 );

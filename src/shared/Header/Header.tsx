@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { GlobalSvgSelector } from '../../assets/icon/global/GlobalSvgSelector';
+import { useTheme } from '../../hooks/useTheme';
+import { Theme } from '../../types/const';
 import styles from './Header.module.scss';
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const theme = useTheme();
+
   const options = [
     { value: 'city-1', label: 'Москва' },
     { value: 'city-2', label: 'Санкт-Петербург' },
     { value: 'city-3', label: 'Екатеринбург' }
   ];
 
-  const [theme, setTheme] = useState('light');
-
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: theme === 'dark' ? '#4F4F4F' : 'rgba(71, 147, 255, 0.2)',
+      backgroundColor:
+        theme.theme === Theme.dark ? '#4F4F4F' : 'rgba(71, 147, 255, 0.2)',
       width: '194px',
       height: '37px',
       border: 'none',
@@ -26,31 +28,13 @@ const Header = (props: Props) => {
     }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme === 'dark' ? '#fff' : '#000'
+      color: theme.theme === Theme.dark ? '#fff' : '#000'
     })
   };
 
-  const changeTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
-  useEffect(() => {
-    const root = document.querySelector(':root') as HTMLElement;
-    const components = [
-      'body-background',
-      'components-background',
-      'card-background',
-      'card-shadow',
-      'text-color'
-    ];
-
-    components.forEach((component) => {
-      root.style.setProperty(
-        `--${component}-default`,
-        `var(--${component}-${theme})`
-      );
-    });
-  }, [theme]);
+  function changeTheme() {
+    theme.changeTheme(theme.theme === Theme.light ? Theme.dark : Theme.light);
+  }
 
   return (
     <header className={styles.header}>
@@ -58,7 +42,7 @@ const Header = (props: Props) => {
         <div className={styles.logo}>
           <GlobalSvgSelector id='header-logo' />
         </div>
-        <div className={styles.title}>React weather</div>
+        <div className={styles.title}>Weather</div>
       </div>
       <div className={styles.wrapper}>
         <div className={styles.change_theme} onClick={changeTheme}>
