@@ -4,7 +4,9 @@
 *, *:after, *:before {
     box-sizing: border-box;
 }
+
 body {
+    position: relative;
     font-family: 'Montserrat', sans-serif;
 }
 .container {
