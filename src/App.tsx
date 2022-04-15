@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home/components/Home';
-import { MonthStatistics } from './pages/MonthStatistics/components/MonthStatistic';
-import { Header } from './shared/Header/Header';
+import { Header } from './components/Header/Header';
+import { Home } from './components/Home/Home';
+import { MonthStatistics } from './components/MonthStatistics/MonthStatistic';
 import { AppRoute } from './types/const';
 // import { Popup } from './shared/Popup/Popup';
 

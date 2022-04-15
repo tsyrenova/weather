@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndicatorSvgSelector } from '../../../../assets/icon/Indicators/IndicatorSvgSelector';
+import { IndicatorSvgSelector } from '../../assets/icon/Indicators/IndicatorSvgSelector';
 import { Item } from './ThisDayInfo';
 import styles from './ThisDayInfo.module.scss';
 

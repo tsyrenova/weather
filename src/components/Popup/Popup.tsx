@@ -1,6 +1,6 @@
 import { GlobalSvgSelector } from '../../assets/icon/global/GlobalSvgSelector';
-import { Item } from '../../pages/Home/components/ThisDayInfo/ThisDayInfo';
-import { ThisDayItem } from '../../pages/Home/components/ThisDayInfo/ThisDayItem';
+import { Item } from '../ThisDayInfo/ThisDayInfo';
+import { ThisDayItem } from '../ThisDayInfo/ThisDayItem';
 import styles from './Popup.module.scss';
 
 type Props = {};

@@ -1,5 +1,5 @@
 import styles from './ThisDayInfo.module.scss';
-import cloud from '../../../../assets/image/cloud.png';
+import cloud from '../../assets/image/cloud.png';
 import { ThisDayItem } from './ThisDayItem';
 
 type Props = {};

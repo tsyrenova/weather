@@ -1,4 +1,4 @@
-import { GlobalSvgSelector } from '../../../assets/icon/global/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../../assets/icon/global/GlobalSvgSelector';
 import { Day } from './Days';
 import styles from './Days.module.scss';
 

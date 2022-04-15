@@ -1,14 +1,19 @@
-import { GlobalSvgSelector } from '../../../../assets/icon/global/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../../assets/icon/global/GlobalSvgSelector';
+import { Weather } from '../../store/types';
 import styles from './ThisDay.module.scss';
 
-type Props = {};
+type Props = {
+  weather: Weather;
+};
 
-const ThisDay = (props: Props) => {
+const ThisDay = ({ weather }: Props) => {
   return (
     <div className={styles.this__day}>
       <div className={styles.top__block}>
         <div className={styles.top__block_wrapper}>
-          <div className={styles.this__temp}>20°</div>
+          <div className={styles.this__temp}>
+            {Math.floor(weather.main.temp)}°
+          </div>
           <div className={styles.this__day_name}>Сегодня</div>
         </div>
         <GlobalSvgSelector id='sunny' />
